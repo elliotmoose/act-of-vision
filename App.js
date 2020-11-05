@@ -4,8 +4,9 @@ import { Button, View } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-import Home from './src/screens/Home';
+import Home from './src/screens/home/Home';
 import DrawerMenu from './src/screens/drawer/DrawerMenu';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 
 const Stack = createStackNavigator();
 function HomeScreen({ navigation }) {
@@ -28,12 +29,15 @@ const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Drawer.Navigator initialRouteName="App"
-      drawerContent={()=><DrawerMenu/>}
-      >
-        <Drawer.Screen name="App" component={HomeScreen} />
-      </Drawer.Navigator>
-    </NavigationContainer>
+    <BottomSheetModalProvider>
+      <NavigationContainer>
+        <Drawer.Navigator initialRouteName="App"
+        drawerContent={()=><DrawerMenu/>}
+        >
+          <Drawer.Screen name="App" component={HomeScreen} />
+        </Drawer.Navigator>
+      </NavigationContainer>
+    </BottomSheetModalProvider>
   );
 }
+

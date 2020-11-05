@@ -10,12 +10,12 @@ let styles = StyleSheet.create({
     },
 })
 
-export function Normal() {
-    return styles.normalFont;
+export function Normal(size=14) {
+    return {...styles.normalFont,  fontSize: size};
 }
 
-export function Bold() {
-    return styles.bold;
+export function Bold(size=14) {
+    return {...styles.bold, fontSize: size};
 }
 
 const Fonts = { Normal, Bold }
