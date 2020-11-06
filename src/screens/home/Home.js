@@ -9,13 +9,15 @@ import Commentary from './Commentary';
 import TextHelper from '../../helpers/TextHelper';
 import { EventRegister } from 'react-native-event-listeners';
 import Header from '../../components/Header';
-
+import WordModal from '../wordModal/WordModal';
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            language: 'ENGLISH'
+            language: 'ENGLISH',
+            modalVisible : false,
+            keyWord : '',
         };
     }
 
@@ -44,7 +46,11 @@ class Home extends Component {
             
             let style = segment.ref ? hyperlinkStyle : null;
 
-            let onPress = segment.ref ? ()=>Alert.alert(segment.ref) : null;
+            let onPress = segment.ref ? ()=>{
+                this.setState({modalVisible:true})
+                this.setState({keyWord:segment.ref})
+
+            } : null;
 
             return <Text key={`${i}`} style={style} onPress={onPress}>
                 {segment.text}
@@ -83,6 +89,7 @@ class Home extends Component {
                         <Commentary title='Para. I Commentary'/>
                     </View>                    
                 </View>
+                <WordModal closeModal={()=>this.setState({modalVisible: false})} modalVisible={this.state.modalVisible} keyWord={this.state.keyWord}/>
             </SafeAreaView>
         );
     }
