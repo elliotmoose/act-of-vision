@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef } from 'react';
-import { Alert, Modal, TouchableHighlight, TouchableOpacity, View, StyleSheet, Text, Animated } from 'react-native';
+import { Alert, Modal, TouchableHighlight, TouchableOpacity, View, StyleSheet, Text, Animated, Image } from 'react-native';
 import BottomSheet from '@gorhom/bottom-sheet';
 import Fonts from '../../constants/Fonts';
 import Colors from '../../constants/Colors';
@@ -7,6 +7,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import {dictionary} from '../../data/data'
 import { Button } from 'react-native-elements'
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Images from '../../constants/Images';
 //Dictionary Data will be recieved in props
 const WordModal = (props) => {
     const keyWord = props.keyWord;
@@ -42,8 +43,8 @@ const WordModal = (props) => {
         >
         <View style={{flex:1,justifyContent: "center",alignItems: "center",padding: 25}}>
           <View style={styles.modalView}>
-
             <ScrollView contentContainerStyle={{padding:15}}>
+            <Image source={Images.spectacles} style={{alignSelf:"center",width:50,height:50,marginBottom:5}}></Image>
             <Text style={{...Fonts.BoldHelvetica(), ...styles.modalText,fontSize:20,fontWeight:"900",textTransform:"capitalize",marginBottom:5}}>{keyWord}</Text>
             <Text style={{...Fonts.BoldHelvetica(),...styles.modalText,fontSize:20,fontWeight:"900",marginBottom:5}}>{keyWord_greek}</Text>
             <Text style={{...Fonts.NormalHelvetica(),...styles.modalText}}>(Pronounced - {keyWord_greekLatin})</Text>

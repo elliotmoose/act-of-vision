@@ -10,10 +10,10 @@ class AboutUs extends Component {
 
         return (
             <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
-                <Header navigation={navigation} title='AboutUs' />
+                <Header navigation={navigation} title='About Us' />
                 <View style={{ flex: 1 }}>
                     <View style={{ flex: 1, backgroundColor: bgColor }}>
-
+                        
                     </View>
                 </View>
             </SafeAreaView>
