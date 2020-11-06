@@ -117,6 +117,18 @@ export let dictionary = {
     }
 }
 
+export let plotinus_e3_c8_commentary_by_para = [
+    'Commentary for paragraph 1',
+    'Commentary for paragraph 2',
+    'Commentary for paragraph 3',
+    'Commentary for paragraph 4',
+    'Commentary for paragraph 5',
+    'Commentary for paragraph 6',
+    'Commentary for paragraph 7',
+    'Commentary for paragraph 8',
+    'Commentary for paragraph 9',
+    'Commentary for paragraph 10',
+]
 
 export function makeHyperlink(text) {
     for(let key in dictionary) {

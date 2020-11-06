@@ -1,5 +1,5 @@
 import React, { Component, useMemo } from 'react';
-import { View, Text, SafeAreaView, Alert } from 'react-native';
+import { View, Text, SafeAreaView, Alert, FlatList } from 'react-native';
 import { Button } from 'react-native-elements';
 import { ScrollView, TextInput } from 'react-native-gesture-handler';
 import Colors from '../../constants/Colors';
@@ -18,6 +18,7 @@ class Home extends Component {
             language: 'ENGLISH',
             modalVisible : false,
             keyWord : '',
+            currentParagraphIndex: 0
         };
     }
 
@@ -57,6 +58,18 @@ class Home extends Component {
             </Text> 
         })
     }
+    
+    onViewableItemsChanged = ({ viewableItems }) => {
+        let currentParagraph = 0;
+        viewableItems.forEach(item => {
+            let paragraphIndex = item.index-1; //the first item is the header
+            if(paragraphIndex>currentParagraph) {
+                currentParagraph = paragraphIndex;
+            }
+        });
+
+        this.setState({currentParagraphIndex: currentParagraph});
+    }
 
     render() {
         const navigation = this.props.navigation;
@@ -68,25 +81,33 @@ class Home extends Component {
                 <Header navigation={navigation} title='The Ennead'/>
                 <View style={{flex: 1}}> 
                     <View style={{flex: 1, backgroundColor: bgColor}}>
-                        <ScrollView style={{padding: 24, paddingLeft: 12, paddingRight: 30}} contentContainerStyle={{alignItems: 'center'}}>
-                            <View style={{width: '70%', marginBottom: 20}}>
-                                <Text style={{...Fonts.BoldHelvetica(19), fontWeight: '900', textAlign: 'center'}}>{title}</Text>
-                                <Text style={{...Fonts.Italic(13), textAlign: 'center', margin: 15, marginTop: 18}}>{subtitle}</Text>
-                            </View>
+                        <FlatList
+                            style={{}} contentContainerStyle={{alignItems: 'center', padding: 24, paddingLeft: 12, paddingRight: 30}}
+                            data={['header', ...textByParagraph]}
+                            keyExtractor={(item, index)=>`${index}`}
+                            renderItem={(eachItem) => {
+                                if (eachItem.item == 'header') {
+                                    return <View style={{ width: '70%', marginBottom: 20 }}>
+                                        <Text style={{ ...Fonts.BoldHelvetica(19), fontWeight: '900', textAlign: 'center' }}>{title}</Text>
+                                        <Text style={{ ...Fonts.Italic(13), textAlign: 'center', margin: 15, marginTop: 18 }}>{subtitle}</Text>
+                                    </View>
+                                }
 
-                            {textByParagraph.map((paragraph, i)=>{
-                                let chapterNumber = TextHelper.romanize(i+1);
-                                return <View key={`${i}`} style={{marginBottom: 32, marginTop: 10, flexDirection: 'row'}}>
-                                    <Text style={{...Fonts.Bold(18), color: Colors.hyperlink, marginRight: 16, marginTop: 2, width: 24, textAlign: 'right'}}>{chapterNumber}</Text>
-                                    <Text style={{lineHeight: 24, ...Fonts.Normal(17), textAlign: 'justify', flex: 1}}>
+                                let { item: paragraph, index } = eachItem;
+                                let i = index - 1;
+                                let chapterNumber = TextHelper.romanize(i + 1);
+                                return <View style={{ marginBottom: 32, marginTop: 10, flexDirection: 'row', minWidth: '100%' }}>
+                                    <Text style={{ ...Fonts.Bold(18), color: Colors.hyperlink, marginRight: 16, marginTop: 2, width: 24, textAlign: 'right' }}>{chapterNumber}</Text>
+                                    <Text style={{ lineHeight: 24, ...Fonts.Normal(17), textAlign: 'justify', flex: 1}}>
                                         {this.renderParagraph(paragraph)}
                                     </Text>
                                 </View>
-                            })}
-                        </ScrollView>                        
+                            }}
+                            onViewableItemsChanged={this.onViewableItemsChanged}
+                        />
                     </View>  
                     <View style={{height: 28, backgroundColor: bgColor}}>
-                        <Commentary title='Para. I Commentary'/>
+                        <Commentary paragraphIndex={this.state.currentParagraphIndex}/>
                     </View>                    
                 </View>
                 <WordModal closeModal={()=>this.setState({modalVisible: false})} modalVisible={this.state.modalVisible} keyWord={this.state.keyWord}/>
