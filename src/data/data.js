@@ -115,6 +115,15 @@ export const about_plotinus = {
     text: 'Plotinus is considered to be founder of Neo-platonism. Being born in Roman Egypt over 500 years and after Aristotles and Platos death, he first and foremost considered himself to simply be a Platonist and a passionate student of his philosophies. \n\nHe mainly set out to intepret Plato’s metaphysical theories (such as the Theory of Ideas) and break them down to clarify the levels behind Plato’s philosophy. He later found himself in a position as a teacher to clarify doubts of those who he thought had misunderstood the teachings and philosophies of Plato. \n\nHe, through the Enneads was also successful in discussing & integrating the different metaphysical ideas of Plato, Aristotle and Stoics during a period late antiquity where the were many social, cultural  and organisational changes happening. One of which was the contemplation of the origin, existence and “goodness” of a “God” or a creator (formation and evolution of Abrahmic Religions). Where through this discourse managed to impact the development of many religions including Christianity, Islam, Judaism, etc. ',
 }
 
+export const concepts_page = {
+    context:"Key Concepts to better understand The Enneads",
+    concepts: [
+    "The Theory Of Ideas",
+    "φύσις (Physis)",
+    "Late Antiquity"
+    ]
+}
+
 export let dictionary = {
     "act-of-vision" : {
         key: 'act-of-vision',
