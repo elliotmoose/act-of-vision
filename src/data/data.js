@@ -105,6 +105,15 @@ export const plotinus_e3_c8_greek = {
     byParagraph: plotinus_e3_c8_greek_by_para,
     text: plotinus_e3_c8_greek_text
 }
+export const about_us_sutd = {
+    context: 'A Project by Digital Humanities Minor Students initiated by Professor Paolo Di Leo of the Humanities, Arts and Social Sciences (HASS) department of the Singapore University of Technology and Design (SUTD)',
+    text: 'In the reading of ancient texts, such as the Enneads, it is difficult to access multiple translations of the same text simultaneously. Furthermore, many keywords in this major text are difficult to translate and interpret correctly, which prevents one from understanding the text in a complete manner. Our aim is hence to develop an app which can encompass these features, to assist researchers in better understanding ancient texts.\n\nWith the creation of E-nneads Co. we have a goal of developing an app where the original Greek text and its English translation can be accessed conveniently on multiple platforms. We also would like to provide additional materials such as a glossary of key words and summaries to assist with the reading of difficult aspects of the text.\n\nThis allows us to learn and re-learn the works Plotinus in a different way, one more on-the-go and portable - Essentally, “Plotinus in you pocket”.',
+}
+export const about_plotinus = {
+    title: 'The Man Behind The Enneads',
+    context: '“One of the most influential philosophers in antiquity after Plato and Aristotle” - The Stanford Encyclopedia of Philosophy',
+    text: 'Plotinus is considered to be founder of Neo-platonism. Being born in Roman Egypt over 500 years and after Aristotles and Platos death, he first and foremost considered himself to simply be a Platonist and a passionate student of his philosophies. \n\nHe mainly set out to intepret Plato’s metaphysical theories (such as the Theory of Ideas) and break them down to clarify the levels behind Plato’s philosophy. He later found himself in a position as a teacher to clarify doubts of those who he thought had misunderstood the teachings and philosophies of Plato. \n\nHe, through the Enneads was also successful in discussing & integrating the different metaphysical ideas of Plato, Aristotle and Stoics during a period late antiquity where the were many social, cultural  and organisational changes happening. One of which was the contemplation of the origin, existence and “goodness” of a “God” or a creator (formation and evolution of Abrahmic Religions). Where through this discourse managed to impact the development of many religions including Christianity, Islam, Judaism, etc. ',
+}
 
 export let dictionary = {
     "act-of-vision" : {

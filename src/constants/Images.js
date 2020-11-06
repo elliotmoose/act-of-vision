@@ -1,5 +1,6 @@
 const Images = {
     plotinus: require('../../assets/images/plotinus.png'),
+    plotinus_full: require('../../assets/images/plotinus_full.png'),
     hexagon: require('../../assets/images/hexagon.png'),
     tree: require('../../assets/images/tree.png'),
     spectacles: require('../../assets/images/spectacles.png'),
