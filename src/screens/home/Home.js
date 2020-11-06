@@ -65,7 +65,7 @@ class Home extends Component {
 
         return (
             <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
-                <Header navigation={navigation} title='The Ennead'/>
+                <Header navigation={navigation} title='The Enneads'/>
                 <View style={{flex: 1}}> 
                     <View style={{flex: 1, backgroundColor: bgColor}}>
                         <ScrollView style={{padding: 24, paddingLeft: 12, paddingRight: 30}} contentContainerStyle={{alignItems: 'center'}}>
