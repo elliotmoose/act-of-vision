@@ -188,5 +188,17 @@ export function makeHyperlink(text) {
     }
 }
 
-// let segments = makeHyperlink(plotinus_e3_c8_eng.slice(0, 1000), dictionary)
-// segments.forEach((segment)=>console.log(segment))
+export const videoLinks = [
+    {
+        title: 'Introduction to Plotinus and Neo-platonism',
+        videoId:'W_qMIbNJhRo'
+    },
+    {
+        title: 'On Ideas and Logos',
+        videoId:'3h788UI839g'
+    },
+    // 'b-rHbfkDd2s',
+    // 'A8ZC4uOwfo8',
+    // '0NXs3AXr1bE',
+    // 'd6ZLOoZiwFw',
+]
