@@ -32,7 +32,7 @@ export default function App() {
     <BottomSheetModalProvider>
       <NavigationContainer>
         <Drawer.Navigator initialRouteName="App"
-        drawerContent={()=><DrawerMenu/>}
+        drawerContent={(props)=><DrawerMenu {...props}/>}
         >
           <Drawer.Screen name="App" component={HomeScreen} />
         </Drawer.Navigator>

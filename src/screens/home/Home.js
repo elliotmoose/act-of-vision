@@ -5,16 +5,28 @@ import { ScrollView, TextInput } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Colors from '../../constants/Colors';
 import Fonts from '../../constants/Fonts';
-import { plotinus_e3_c8, plotinus_e3_c8_eng_by_para, makeHyperlink } from '../../data/data';
+import { plotinus_e3_c8_eng, plotinus_e3_c8_eng_by_para, makeHyperlink, plotinus_e3_c8_greek } from '../../data/data';
 import Commentary from './Commentary';
 import TextHelper from '../../helpers/TextHelper';
+import { EventRegister } from 'react-native-event-listeners';
 
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            language: 'ENGLISH'
         };
+    }
+
+    componentDidMount() {
+        this.selectLanguageEventListener = EventRegister.addEventListener('ON_SELECT_LANGUAGE', (language)=> {
+            this.setState({language});
+        })
+    }
+
+    componentWillUnmount() {
+        EventRegister.removeEventListener(this.selectLanguageEventListener);
     }
 
     getTextByChapter() {
@@ -43,7 +55,7 @@ class Home extends Component {
     render() {
         const navigation = this.props.navigation;
         const bgColor = 'white'
-        let { title, subtitle, byParagraph: textByParagraph } = plotinus_e3_c8;
+        let { title, subtitle, byParagraph: textByParagraph } = this.state.language == 'ENGLISH' ? plotinus_e3_c8_eng : plotinus_e3_c8_greek;
 
         return (
             <SafeAreaView style={{flex: 1}}>

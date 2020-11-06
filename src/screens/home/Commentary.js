@@ -4,7 +4,7 @@ import BottomSheet from '@gorhom/bottom-sheet';
 import Fonts from '../../constants/Fonts';
 import Colors from '../../constants/Colors';
 import { ScrollView } from 'react-native-gesture-handler';
-import {plotinus_e3_c8_eng} from '../../data/data'
+import {plotinus_e3_c8_eng_text} from '../../data/data'
 import { Extrapolate, interpolate, useValue } from 'react-native-reanimated';
 const Commentary = (props) => {
   // hooks
@@ -35,7 +35,7 @@ const Commentary = (props) => {
             <ScrollView style={{padding: 12}}>
                 <View style={{borderRadius: 20, overflow: 'hidden'}}>
                     <Text style={{backgroundColor: 'white', padding: 34}}>
-                        {plotinus_e3_c8_eng}
+                        {plotinus_e3_c8_eng_text}
                     </Text>
                 </View>
             </ScrollView>

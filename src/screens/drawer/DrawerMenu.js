@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, SafeAreaView, TouchableOpacity, Image } from 'react-native';
 import Fonts from '../../constants/Fonts';
 import Images from '../../constants/Images';
+import { EventRegister } from 'react-native-event-listeners'
 
 class DrawerMenu extends Component {
 
@@ -12,6 +13,29 @@ class DrawerMenu extends Component {
 		["Watch"]: [],
 	};
 
+	dismiss() {
+		this.props.navigation.closeDrawer();
+	}
+
+	onSelectMenuItem(menuItem) {
+		switch (menuItem) {
+			//greek
+			case this.menuCategories.Read[0]:
+				EventRegister.emit('ON_SELECT_LANGUAGE', 'GREEK');
+				this.dismiss()
+				break;
+
+				//english
+			case this.menuCategories.Read[1]:
+				EventRegister.emit('ON_SELECT_LANGUAGE', 'ENGLISH');				
+				this.dismiss()
+				break;
+		
+			default:
+				break;
+		}
+	}
+
 	renderMenuItems() {
 		return Object.keys(this.menuCategories).map(category => {
 			let menuItems = this.menuCategories[category];
@@ -20,7 +44,7 @@ class DrawerMenu extends Component {
 				{
 					menuItems.map((menuItem) => {
 						return <View key={menuItem}>
-							<TouchableOpacity style={{marginLeft: 42}}><Text style={{...Fonts.Normal(), fontSize: 18, marginVertical: 6}}>{menuItem}</Text></TouchableOpacity>
+							<TouchableOpacity style={{marginLeft: 42}}><Text style={{...Fonts.Normal(), fontSize: 18, marginVertical: 6}} onPress={()=>this.onSelectMenuItem(menuItem)}>{menuItem}</Text></TouchableOpacity>
 						</View>
 					})
 				}
@@ -34,7 +58,7 @@ class DrawerMenu extends Component {
 			<SafeAreaView style={{flex: 1}}>
 				<View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 20, marginBottom: 20 }}>
 					<Text style={{ ...Fonts.Normal(), fontSize: 15 }}> E-nneads Co. </Text>
-					<TouchableOpacity onPress={() => { }}><Text style={{ fontFamily: 'helvetica neue', fontWeight: '900', fontSize: 24 }}>X</Text></TouchableOpacity>
+					<TouchableOpacity onPress={() => { }}><Text style={{ fontFamily: 'helvetica neue', fontWeight: '900', fontSize: 24 }} onPress={()=>this.dismiss()}>X</Text></TouchableOpacity>
 				</View>
 				{this.renderMenuItems()}
 				<Image style={{position: 'absolute', bottom: -30, left: -75}} source={Images.plotinus}/>
