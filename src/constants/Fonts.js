@@ -24,6 +24,9 @@ let styles = StyleSheet.create({
 export function Normal(size=14) {
     return {...styles.normalFont,  fontSize: size};
 }
+export function Text(size=17) {
+    return {lineHeight: 24, ...Normal(size), textAlign: 'justify'};
+}
 
 export function Bold(size=14) {
     return {...styles.bold, fontSize: size};
@@ -41,5 +44,5 @@ export function BoldHelvetica(size=14) {
     return {...styles.boldHelvetica, fontSize: size};
 }
 
-const Fonts = { Normal, Bold, NormalHelvetica, BoldHelvetica, Italic}
+const Fonts = { Normal, Bold, Text, NormalHelvetica, BoldHelvetica, Italic}
 export default Fonts;

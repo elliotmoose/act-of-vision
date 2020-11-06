@@ -103,8 +103,8 @@ class DrawerMenu extends Component {
 		return (
 			<SafeAreaView style={{flex: 1}}>
 				<View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 20, marginBottom: 20 }}>
-					<Text style={{ ...Fonts.Normal(), fontSize: 15 }}> E-nneads Co. </Text>
-					<TouchableOpacity onPress={() => { }}><Text style={{ fontFamily: 'helvetica neue', fontWeight: '900', fontSize: 24 }} onPress={()=>this.dismiss()}>X</Text></TouchableOpacity>
+					<Text style={Fonts.Normal(17)}> E-nneads Co. </Text>
+					<TouchableOpacity onPress={()=>this.dismiss()}><Image source={Images.x} style={{height: 20, aspectRatio: 1}} resizeMode='contain'></Image></TouchableOpacity>
 				</View>
 				{this.renderMenuItems()}
 				<Image style={{position: 'absolute', bottom: -30, left: -75}} source={Images.plotinus}/>
