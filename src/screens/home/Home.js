@@ -1,11 +1,11 @@
 import React, { Component, useMemo } from 'react';
-import { View, Text, SafeAreaView } from 'react-native';
+import { View, Text, SafeAreaView, Alert } from 'react-native';
 import { Button } from 'react-native-elements';
 import { ScrollView, TextInput } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Colors from '../../constants/Colors';
 import Fonts from '../../constants/Fonts';
-import { plotinus_e3_c8, plotinus_e3_c8_eng_by_para } from '../../data/data';
+import { plotinus_e3_c8, plotinus_e3_c8_eng_by_para, makeHyperlink } from '../../data/data';
 import Commentary from './Commentary';
 import TextHelper from '../../helpers/TextHelper';
 
@@ -19,6 +19,25 @@ class Home extends Component {
 
     getTextByChapter() {
         return plotinus_e3_c8_eng_by_para;
+    }
+
+    renderParagraph(paragraph) {
+        let segments = makeHyperlink(paragraph);
+        return segments.map((segment, i) => {
+
+            let hyperlinkStyle = {
+                color: Colors.hyperlink,
+                textDecorationLine: 'underline'
+            }
+            
+            let style = segment.ref ? hyperlinkStyle : null;
+
+            let onPress = segment.ref ? ()=>Alert.alert(segment.ref) : null;
+
+            return <Text key={`${i}`} style={style} onPress={onPress}>
+                {segment.text}
+            </Text> 
+        })
     }
 
     render() {
@@ -41,13 +60,13 @@ class Home extends Component {
                                 <Text style={{...Fonts.Italic(13), textAlign: 'center', margin: 15, marginTop: 18}}>{subtitle}</Text>
                             </View>
 
-                            {textByParagraph.map((paragraphNumber, i)=>{
+                            {textByParagraph.map((paragraph, i)=>{
                                 let chapterNumber = TextHelper.romanize(i+1);
                                 return <View key={`${i}`} style={{marginBottom: 32, marginTop: 10, flexDirection: 'row'}}>
                                     <Text style={{...Fonts.Bold(18), color: Colors.hyperlink, marginRight: 16, marginTop: 2, width: 24, textAlign: 'right'}}>{chapterNumber}</Text>
                                     <Text style={{lineHeight: 24, ...Fonts.Normal(17), textAlign: 'justify', flex: 1}}>
-                                        {paragraphNumber}
-                                    </Text> 
+                                        {this.renderParagraph(paragraph)}
+                                    </Text>
                                 </View>
                             })}
                         </ScrollView>

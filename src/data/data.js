@@ -98,10 +98,73 @@ export const plotinus_e3_c8 = {
 
 export let dictionary = {
     "act-of-vision" : {
+        key: 'act-of-vision',
         greek: 'θεωρία',
-        alphabets: 'theoría',
+        greekLatin: 'theoría',
         armstrong: 'contemplation',
         definition : 'The being at work that establishes itself as vision”; Vision which could be in the form of the intellectual or phyiscal, allows one to not only “see” the viewed object in mind/at hand but also brings light the prior of that viewed object (the source of it’s power)',
         intuition: 'When you think about something (intellectual) and when you are directly looking at that same something (physical) you are steeped in the “act of vision”.  That very same thing is also participating and has the “act of vision” as it allows you in turn to see what intelligence (source of it’s power) lies behind that thing.'
     }
 }
+
+
+export function makeHyperlink(text) {
+    for(let key in dictionary) {
+        let dictRef = dictionary[key];
+        let matches = [];
+        let startIndex = 0;
+
+        while(startIndex < text.length) {            
+            let wordsToMatch = [dictRef.key, dictRef.greek, dictRef.greekLatin];
+            let matchedAny = false;
+            let nextStartIndex = 0;
+            for(let wordToMatch of wordsToMatch) {
+                let idx = text.indexOf(wordToMatch, startIndex);
+                if(idx != -1) {
+                    matches.push({
+                        start: idx,
+                        end: idx + wordToMatch.length,
+                        ref: dictRef.key
+                    });
+                    matchedAny = true;
+                    nextStartIndex = Math.max(idx + wordToMatch.length, nextStartIndex); //choose the largest index to continue off,
+                }
+            }
+            
+            startIndex = nextStartIndex;
+
+            if(!matchedAny) {
+                break;
+            }
+        }
+
+
+        matches.sort((a, b)=> a.start-b.start);
+
+        let segments = []
+        let cursor = 0;
+        for(let match of matches) {
+            let start = match.start;
+            let end = match.end;
+            
+            let previousChunk = {
+                text: text.slice(cursor, start),
+            };
+
+            let matchChunk = {
+                text: text.slice(start, end),
+                ref: match.ref
+            }
+
+            cursor = end;
+            segments.push(previousChunk);
+            segments.push(matchChunk);
+        }
+        
+        segments.push({text: text.slice(cursor)})
+        return segments;
+    }
+}
+
+// let segments = makeHyperlink(plotinus_e3_c8_eng.slice(0, 1000), dictionary)
+// segments.forEach((segment)=>console.log(segment))
