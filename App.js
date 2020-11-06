@@ -7,6 +7,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import Home from './src/screens/home/Home';
 import DrawerMenu from './src/screens/drawer/DrawerMenu';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import AboutUs from './src/screens/AboutUs';
+import Author from './src/screens/Author';
+import Concepts from './src/screens/Concepts';
+import Summaries from './src/screens/Summaries';
+import Watch from './src/screens/Watch';
 
 const Stack = createStackNavigator();
 function HomeScreen({ navigation }) {
@@ -35,6 +40,11 @@ export default function App() {
         drawerContent={(props)=><DrawerMenu {...props}/>}
         >
           <Drawer.Screen name="App" component={HomeScreen} />
+          <Drawer.Screen name="AboutUs" component={AboutUs} />
+          <Drawer.Screen name="Author" component={Author} />
+          <Drawer.Screen name="Concepts" component={Concepts} />
+          <Drawer.Screen name="Summaries" component={Summaries} />
+          <Drawer.Screen name="Watch" component={Watch} />
         </Drawer.Navigator>
       </NavigationContainer>
     </BottomSheetModalProvider>

@@ -6,45 +6,91 @@ import { EventRegister } from 'react-native-event-listeners'
 
 class DrawerMenu extends Component {
 
-	menuCategories = {
-		["Read"]: ['Greek Original', 'English Translation'],
-		["Learn"]: ['About Plotinus', 'The Enneads Summaries', 'Pre-requisite Concepts'],
-		["About Us"]: [],
-		["Watch"]: [],
-	};
+	// menuCategories = {
+	// 	["Read"]: ['Greek Original', 'English Translation'],
+	// 	["Learn"]: ['About Plotinus', 'The Enneads Summaries', 'Pre-requisite Concepts'],
+	// 	["About Us"]: [],
+	// 	["Watch"]: [],
+	// };
+
+
+	menuCategories = [
+		{
+			text: 'Read',
+			value: 'Read',
+			items: [{
+				text: 'Greek Original',
+				value: 'GREEK'
+			},
+			{
+				text: 'English Translation',
+				value: 'ENGLISH'
+			}]
+		},
+		{
+			text: 'Learn',
+			value: 'Learn',
+			items: [{
+				text: 'About Plotinus',
+				value: 'Author'
+			},
+			{
+				text: 'The Enneads Summaries',
+				value: 'Summaries'			
+			},
+			{
+				text: 'Pre-requisite Concepts',
+				value: 'Concepts'
+			}]
+		},
+		{
+			text: 'About Us',
+			value: 'AboutUs'
+		},
+		{
+			text: 'Watch',
+			value: 'Watch'
+		},
+	]
 
 	dismiss() {
 		this.props.navigation.closeDrawer();
 	}
+	
+	navigate(target) {		
+		this.props.navigation.navigate(target);
+	}
 
-	onSelectMenuItem(menuItem) {
-		switch (menuItem) {
+	onSelectMenuItem(item) {
+		switch (item.value) {
 			//greek
-			case this.menuCategories.Read[0]:
-				EventRegister.emit('ON_SELECT_LANGUAGE', 'GREEK');
+			case 'AboutUs':
+			case 'Watch':
+			case 'Summaries':
+			case 'Concepts':
+			case 'Author':
+				this.navigate(item.value);
+				break;
+			case 'GREEK':
+			case 'ENGLISH':
+				this.navigate('App');
+				EventRegister.emit('ON_SELECT_LANGUAGE', item.value);
 				this.dismiss()
 				break;
-
-				//english
-			case this.menuCategories.Read[1]:
-				EventRegister.emit('ON_SELECT_LANGUAGE', 'ENGLISH');				
-				this.dismiss()
-				break;
-		
 			default:
 				break;
 		}
 	}
 
 	renderMenuItems() {
-		return Object.keys(this.menuCategories).map(category => {
-			let menuItems = this.menuCategories[category];
-			return <View key={category}>
-				<TouchableOpacity style={{marginLeft: 22}}><Text style={{...Fonts.Bold(), fontSize: 24, marginVertical: 8}}>{category}</Text></TouchableOpacity>
+		return this.menuCategories.map(category => {
+			let items = category.items || [];
+			return <View key={category.value}>
+				<TouchableOpacity style={{marginLeft: 22}}><Text style={{...Fonts.Bold(), fontSize: 24, marginVertical: 8}} onPress={()=>this.onSelectMenuItem(category)}>{category.text}</Text></TouchableOpacity>
 				{
-					menuItems.map((menuItem) => {
-						return <View key={menuItem}>
-							<TouchableOpacity style={{marginLeft: 42}}><Text style={{...Fonts.Normal(), fontSize: 18, marginVertical: 6}} onPress={()=>this.onSelectMenuItem(menuItem)}>{menuItem}</Text></TouchableOpacity>
+					items.map((item) => {
+						return <View key={item.value}>
+							<TouchableOpacity style={{marginLeft: 42}}><Text style={{...Fonts.Normal(), fontSize: 18, marginVertical: 6}} onPress={()=>this.onSelectMenuItem(item)}>{item.text}</Text></TouchableOpacity>
 						</View>
 					})
 				}

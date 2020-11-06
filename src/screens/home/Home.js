@@ -2,13 +2,13 @@ import React, { Component, useMemo } from 'react';
 import { View, Text, SafeAreaView, Alert } from 'react-native';
 import { Button } from 'react-native-elements';
 import { ScrollView, TextInput } from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import Colors from '../../constants/Colors';
 import Fonts from '../../constants/Fonts';
 import { plotinus_e3_c8_eng, plotinus_e3_c8_eng_by_para, makeHyperlink, plotinus_e3_c8_greek } from '../../data/data';
 import Commentary from './Commentary';
 import TextHelper from '../../helpers/TextHelper';
 import { EventRegister } from 'react-native-event-listeners';
+import Header from '../../components/Header';
 
 
 class Home extends Component {
@@ -58,12 +58,8 @@ class Home extends Component {
         let { title, subtitle, byParagraph: textByParagraph } = this.state.language == 'ENGLISH' ? plotinus_e3_c8_eng : plotinus_e3_c8_greek;
 
         return (
-            <SafeAreaView style={{flex: 1}}>
-                <View style={{flexDirection: 'row', alignItems: 'center', paddingHorizontal: 12}}>
-                    <Button buttonStyle={{ backgroundColor: null, width: 50, height: 50, padding: 5 }} icon={<Icon name="menu" size={40} color="black" />} onPress={navigation.openDrawer} />
-                    <Text style={{flex: 1, textAlign: 'center', fontWeight: '700', fontSize: 22}}> The Ennead </Text>
-                    <Button buttonStyle={{ backgroundColor: null }} titleStyle={{color: 'black', fontWeight: '700', fontSize: 22}} title='III 8' onPress={navigation.openDrawer} />                
-                </View>
+            <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+                <Header navigation={navigation} title='The Ennead'/>
                 <View style={{flex: 1}}> 
                     <View style={{flex: 1, backgroundColor: bgColor}}>
                         <ScrollView style={{padding: 24, paddingLeft: 12, paddingRight: 30}} contentContainerStyle={{alignItems: 'center'}}>
@@ -81,8 +77,7 @@ class Home extends Component {
                                     </Text>
                                 </View>
                             })}
-                        </ScrollView>
-                        
+                        </ScrollView>                        
                     </View>  
                     <View style={{height: 28, backgroundColor: bgColor}}>
                         <Commentary title='Para. I Commentary'/>
