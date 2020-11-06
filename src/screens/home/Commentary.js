@@ -1,14 +1,14 @@
 import React, { useCallback, useMemo, useRef } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, Animated } from 'react-native';
 import BottomSheet from '@gorhom/bottom-sheet';
 import Fonts from '../../constants/Fonts';
 import Colors from '../../constants/Colors';
 import { ScrollView } from 'react-native-gesture-handler';
 import {plotinus_e3_c8_eng} from '../../data/data'
+import { Extrapolate, interpolate, useValue } from 'react-native-reanimated';
 const Commentary = (props) => {
   // hooks
-  const bottomSheetRef = useRef(null);
-
+  const bottomSheetRef = useRef(null);  
   // variables
   const snapPoints = useMemo(() => [80, '90%'], []);
 
@@ -24,12 +24,12 @@ const Commentary = (props) => {
         ref={bottomSheetRef}
         initialSnapIndex={0}
         snapPoints={snapPoints}
-        onChange={handleSheetChanges}
+        onChange={handleSheetChanges}     
         // backgroundComponent={()=><View style={{backgroundColor: 'green'}}/>}
-        handleComponent={()=><View style={styles.handleContainer}>
+        handleComponent={()=><Animated.View style={{...styles.handleContainer, marginBottom: 0}}>
             <View style={{backgroundColor: 'white', width: 27, height: 5, borderRadius: 5, marginBottom: 8}}/>
             <Text style={{...Fonts.Bold(15), color: 'white'}}>{props.title}</Text>
-        </View>}
+        </Animated.View>}
       >
         <View style={{backgroundColor: Colors.green, flex: 1}}>
             <ScrollView style={{padding: 12}}>

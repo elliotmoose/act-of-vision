@@ -5,7 +5,7 @@ import { ScrollView, TextInput } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Colors from '../../constants/Colors';
 import Fonts from '../../constants/Fonts';
-import { plotinus_e3_c8_eng_by_chapter } from '../../data/data';
+import { plotinus_e3_c8, plotinus_e3_c8_eng_by_para } from '../../data/data';
 import Commentary from './Commentary';
 import TextHelper from '../../helpers/TextHelper';
 
@@ -17,9 +17,15 @@ class Home extends Component {
         };
     }
 
+    getTextByChapter() {
+        return plotinus_e3_c8_eng_by_para;
+    }
+
     render() {
         const navigation = this.props.navigation;
         const bgColor = 'white'
+        let { title, subtitle, byParagraph: textByParagraph } = plotinus_e3_c8;
+
         return (
             <SafeAreaView style={{flex: 1}}>
                 <View style={{flexDirection: 'row', alignItems: 'center', paddingHorizontal: 12}}>
@@ -29,20 +35,25 @@ class Home extends Component {
                 </View>
                 <View style={{flex: 1}}> 
                     <View style={{flex: 1, backgroundColor: bgColor}}>
-                        <ScrollView style={{padding: 24, paddingLeft: 12, paddingRight: 30}}>
-                            {plotinus_e3_c8_eng_by_chapter.map((chapter, i)=>{
+                        <ScrollView style={{padding: 24, paddingLeft: 12, paddingRight: 30}} contentContainerStyle={{alignItems: 'center'}}>
+                            <View style={{width: '70%', marginBottom: 20}}>
+                                <Text style={{...Fonts.BoldHelvetica(19), fontWeight: '900', textAlign: 'center'}}>{title}</Text>
+                                <Text style={{...Fonts.Italic(13), textAlign: 'center', margin: 15, marginTop: 18}}>{subtitle}</Text>
+                            </View>
+
+                            {textByParagraph.map((paragraphNumber, i)=>{
                                 let chapterNumber = TextHelper.romanize(i+1);
                                 return <View key={`${i}`} style={{marginBottom: 32, marginTop: 10, flexDirection: 'row'}}>
                                     <Text style={{...Fonts.Bold(18), color: Colors.hyperlink, marginRight: 16, marginTop: 2, width: 24, textAlign: 'right'}}>{chapterNumber}</Text>
                                     <Text style={{lineHeight: 24, ...Fonts.Normal(17), textAlign: 'justify', flex: 1}}>
-                                        {chapter}
+                                        {paragraphNumber}
                                     </Text> 
                                 </View>
                             })}
                         </ScrollView>
                         
                     </View>  
-                    <View style={{height: 80, backgroundColor: bgColor}}>
+                    <View style={{height: 28, backgroundColor: bgColor}}>
                         <Commentary title='Para. I Commentary'/>
                     </View>                    
                 </View>
