@@ -1,5 +1,5 @@
 import React, { Component, useMemo } from 'react';
-import { View, Text, SafeAreaView, Alert, FlatList } from 'react-native';
+import { View, Text, SafeAreaView, Alert, FlatList, Dimensions } from 'react-native';
 import { Button } from 'react-native-elements';
 import { ScrollView, TextInput } from 'react-native-gesture-handler';
 import Colors from '../../constants/Colors';
@@ -110,6 +110,7 @@ class Home extends Component {
                         <Commentary paragraphIndex={this.state.currentParagraphIndex}/>
                     </View>                    
                 </View>
+                <View style={{position: 'absolute', height: Dimensions.get('screen').height, width: '100%', backgroundColor: 'black', opacity: this.state.modalVisible ? 0.4 : 0, zIndex:9999}} pointerEvents='none'/>
                 <WordModal closeModal={()=>this.setState({modalVisible: false})} modalVisible={this.state.modalVisible} keyWord={this.state.keyWord}/>
             </SafeAreaView>
         );
