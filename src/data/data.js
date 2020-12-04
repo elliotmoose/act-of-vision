@@ -132,7 +132,15 @@ export let dictionary = {
         armstrong: 'contemplation',
         definition : 'The being at work that establishes itself as vision”; Vision which could be in the form of the intellectual or phyiscal, allows one to not only “see” the viewed object in mind/at hand but also brings light the prior of that viewed object (the source of it’s power)',
         intuition: 'When you think about something (intellectual) and when you are directly looking at that same something (physical) you are steeped in the “act of vision”.  That very same thing is also participating and has the “act of vision” as it allows you in turn to see what intelligence (source of it’s power) lies behind that thing.'
-    }
+    },
+    "power of growth" : {
+        key: 'power of growth',
+        greek: 'θεωρία',
+        greekLatin: 'theoría',
+        armstrong: 'contemplation',
+        definition : 'The being at work that establishes itself as vision”; Vision which could be in the form of the intellectual or phyiscal, allows one to not only “see” the viewed object in mind/at hand but also brings light the prior of that viewed object (the source of it’s power)',
+        intuition: 'When you think about something (intellectual) and when you are directly looking at that same something (physical) you are steeped in the “act of vision”.  That very same thing is also participating and has the “act of vision” as it allows you in turn to see what intelligence (source of it’s power) lies behind that thing.'
+    },
 }
 
 export let plotinus_e3_c8_commentary_by_para = [
@@ -149,9 +157,9 @@ export let plotinus_e3_c8_commentary_by_para = [
 ]
 
 export function makeHyperlink(text) {
+    let matches = [];
     for(let key in dictionary) {
         let dictRef = dictionary[key];
-        let matches = [];
         let startIndex = 0;
 
         while(startIndex < text.length) {            
@@ -179,31 +187,32 @@ export function makeHyperlink(text) {
         }
 
 
-        matches.sort((a, b)=> a.start-b.start);
-
-        let segments = []
-        let cursor = 0;
-        for(let match of matches) {
-            let start = match.start;
-            let end = match.end;
-            
-            let previousChunk = {
-                text: text.slice(cursor, start),
-            };
-
-            let matchChunk = {
-                text: text.slice(start, end),
-                ref: match.ref
-            }
-
-            cursor = end;
-            segments.push(previousChunk);
-            segments.push(matchChunk);
-        }
-        
-        segments.push({text: text.slice(cursor)})
-        return segments;
     }
+
+    matches.sort((a, b)=> a.start-b.start);
+
+    let segments = []
+    let cursor = 0;
+    for(let match of matches) {
+        let start = match.start;
+        let end = match.end;
+        
+        let previousChunk = {
+            text: text.slice(cursor, start),
+        };
+
+        let matchChunk = {
+            text: text.slice(start, end),
+            ref: match.ref
+        }
+
+        cursor = end;
+        segments.push(previousChunk);
+        segments.push(matchChunk);
+    }
+    
+    segments.push({text: text.slice(cursor)})
+    return segments;
 }
 
 export const videoLinks = [
