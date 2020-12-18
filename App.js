@@ -16,7 +16,7 @@ import Watch from './src/screens/Watch';
 const Stack = createStackNavigator();
 function HomeScreen({ navigation }) {
   return (
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator initialRouteName="Home"   screenOptions={{headerShown: false }}>
       <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
     </Stack.Navigator>
   );

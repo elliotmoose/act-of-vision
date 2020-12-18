@@ -79,7 +79,7 @@ class DrawerMenu extends Component {
 				break;
 			default:
 				break;
-		}
+		} 
 	}
 
 	renderMenuItems() {

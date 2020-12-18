@@ -18,13 +18,15 @@ const WordModal = (props) => {
         alphabets: keyWord_alphabets, 
         greekLatin: keyWord_greekLatin,
         definition: keyWord_definition,
-        intuition: keyWord_intuition
+        intuition: keyWord_intuition,
+        quote: keyWord_quote
     } = dictRef  || {
         greek: '',
         alphabets: '',
         greekLatin: '',
         definition: '',
         intuition: '',
+        quote:''
     }
 
     // const keyWord_greek = dictionary[props.keyWord].greek
@@ -50,6 +52,7 @@ const WordModal = (props) => {
             <Text style={{...Fonts.NormalHelvetica(),...styles.modalText}}>(Pronounced - {keyWord_greekLatin})</Text>
             <Text style={{...styles.modalText,...Fonts.Normal(), textAlign:"justify"}}><Text style={{...Fonts.Bold()}}>Definition:</Text> {keyWord_definition}</Text>
             <Text style={{...styles.modalText,textAlign:"justify",...Fonts.Normal()}}><Text style={{...Fonts.Bold()}}>Intuition:</Text> {keyWord_intuition}</Text>
+            <Text style={{...styles.modalText,textAlign:"justify",...Fonts.Normal()}}><Text style={{...Fonts.Bold()}}>Quote:</Text> {keyWord_quote}</Text>
             </ScrollView>
             <View style={{position: 'absolute', top: 0, right:0}}>
               <TouchableOpacity
@@ -75,7 +78,7 @@ const styles = StyleSheet.create({
       padding: 20,
       alignItems: "center",
       shadowColor: "#000",
-      maxHeight:400,
+      maxHeight:600,
       shadowOffset: {
         width: 0,
         height: 2
