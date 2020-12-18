@@ -156,7 +156,7 @@ export let dictionary = {
         armstrong: 'contemplation',
         definition : 'The being at work that establishes itself as vision”; Vision which could be in the form of the intellectual or phyiscal, allows one to not only “see” the viewed object in mind/at hand but also brings light the prior of that viewed object (the source of it’s power)',
         intuition: 'When you think about something (intellectual) and when you are directly looking at that same something (physical) you are steeped in the “act of vision”.  That very same thing is also participating and has the “act of vision” as it allows you in turn to see what intelligence (source of it’s power) lies behind that thing.'
-    },
+    }
 }
 
 export let plotinus_e3_c8_commentary_by_para = [
@@ -183,7 +183,7 @@ export function makeHyperlink(text) {
             let matchedAny = false;
             let nextStartIndex = 0;
             for(let wordToMatch of wordsToMatch) {
-                let idx = text.indexOf(wordToMatch, startIndex);
+                let idx = text.toLowerCase().indexOf(wordToMatch.toLowerCase(), startIndex);
                 if(idx != -1) {
                     matches.push({
                         start: idx,
@@ -192,7 +192,8 @@ export function makeHyperlink(text) {
                     });
                     matchedAny = true;
                     nextStartIndex = Math.max(idx + wordToMatch.length, nextStartIndex); //choose the largest index to continue off,
-                }
+                    break
+                }                
             }
             
             startIndex = nextStartIndex;
