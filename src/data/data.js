@@ -1,3 +1,19 @@
+const loremipsum = `Et aute voluptate eu nisi occaecat et ipsum. Officia velit excepteur mollit enim exercitation proident minim occaecat velit aliquip consectetur ullamco excepteur. Adipisicing nostrud voluptate minim veniam culpa officia fugiat nisi laborum deserunt occaecat elit dolor minim. Duis dolor magna culpa ex consequat ullamco. Magna consectetur duis veniam duis aliquip consectetur culpa ex laboris. Aliqua labore officia labore laborum commodo. Consectetur non excepteur cillum excepteur voluptate.
+
+Anim deserunt eiusmod proident cillum eu fugiat consectetur veniam ea nulla consectetur magna dolore ut. Ullamco consequat eu mollit nisi veniam culpa enim. Consequat labore reprehenderit tempor laborum labore ipsum aute duis dolore.
+
+Sunt nostrud excepteur amet duis ut veniam eiusmod adipisicing adipisicing deserunt sunt in. Reprehenderit adipisicing anim officia non enim id do occaecat dolore. Mollit ad duis sint sint enim incididunt aliquip. Ad do nulla veniam id incididunt reprehenderit ex enim anim aute. Irure magna minim id consectetur velit sit sunt et quis officia officia duis. Dolore nulla magna tempor mollit enim adipisicing nisi duis duis fugiat enim officia cupidatat.
+
+Ea do velit quis aute et magna duis eu tempor ea aliqua. Ex sint pariatur eiusmod eiusmod consectetur minim sint aliquip amet tempor sint. Cupidatat nostrud nisi Lorem velit amet ipsum aliquip reprehenderit. Sunt aute aliquip ea duis do sit officia elit Lorem nisi. Labore enim nulla eiusmod exercitation qui velit Lorem. Quis nisi amet consectetur mollit cillum voluptate velit velit nisi anim deserunt sit. Pariatur magna cillum enim qui do irure exercitation pariatur et nisi fugiat est id.
+
+Reprehenderit incididunt ad voluptate occaecat minim minim. Elit labore laborum velit minim veniam ea laborum ut. Do elit consectetur elit quis veniam. Commodo officia voluptate excepteur nisi in. Mollit adipisicing deserunt eu aliqua aliqua aliquip amet ea.
+
+Tempor commodo deserunt ex eiusmod enim ut elit labore eu deserunt. Eiusmod ut non pariatur sint exercitation officia laboris reprehenderit qui. Sit consequat nostrud commodo ut aliqua occaecat voluptate Lorem magna aute. Ea culpa ullamco dolor laboris dolor laborum minim laboris Lorem. Est enim quis dolor eu et reprehenderit sint aliqua fugiat. Aliquip eu laboris nulla sunt ipsum commodo adipisicing anim est anim aute mollit.
+
+Culpa labore laboris et ea voluptate aliquip do occaecat ut. Eiusmod anim esse do laboris aute cillum incididunt culpa cillum occaecat pariatur culpa est. Est aliqua id commodo labore elit. Qui ut amet do deserunt ut veniam minim pariatur cillum et anim ut.`
+
+
+
 export const plotinus_e3_c8_greek_text = `1 Παίζοντες δὴ τὴν πρώτην πρὶν ἐπιχειρεῖν σπουδάζειν εἰ λέγοιμεν πάντα θεωρίας ἐφίεσθαι καὶ εἰς τέλος τοῦτο βλέπειν, οὐ μόνον ἔλλογα ἀλλὰ καὶ ἄλογα ζῷα καὶ τὴν ἐν φυτοῖς φύσιν καὶ τὴν ταῦτα γεννῶσαν γῆν, καὶ πάντα τυγχάνειν καθ᾽ ὅσον οἷόν τε αὐτοῖς κατὰ φύσιν ἔχοντα, ἄλλα δὲ ἄλλως καὶ θεωρεῖν καὶ τυγχάνειν καὶ τὰ μὲν ἀληθῶς, τὰ δὲ μίμησιν καὶ εἰκόνα τούτου λαμβάνοντα – ἆρ᾽ ἄν τις ἀνάσχοιτο τὸ παράδοξον τοῦ λόγου; Ἢ πρὸς ἡμᾶς αὐτοῦ γινομένου κίνδυνος οὐδεὶς ἐν τῷ παίζειν τὰ αὐτῶν γενήσεται. Ἆρ᾽ οὖν καὶ ἡμεῖς παίζοντες ἐν τῷ παρόντι θεωροῦμεν; Ἢ καὶ ἡμεῖς καὶ πάντες ὅσοι παίζουσι τοῦτο ποιοῦσιν ἢ τούτου γε παίζουσιν ἐφιέμενοι. Καὶ κινδυνεύει, εἴτε τις παῖς εἴτε ἀνὴρ παίζει ἢ σπουδάζει, θεωρίας ἕνεκεν ὁ μὲν παίζειν, ὁ δὲ σπουδάζειν, καὶ πρᾶξις πᾶσα εἰς θεωρίαν τὴν σπουδὴν ἔχειν, ἡ μὲν ἀναγκαία καὶ ἐπιπλέον, τὴν θεωρίαν ἕλκουσα πρὸς τὸ ἔξω, ἡ δὲ ἑκούσιος λεγομένη ἐπ᾽ ἔλαττον μέν, ὅμως δὲ καὶ αὕτη ἐφέσει θεωρίας γινομένη. Ἀλλὰ ταῦτα μὲν ὕστερον· νῦν δὲ λέγωμεν περί τε γῆς αὐτῆς καὶ δένδρων καὶ ὅλως φυτῶν τίς αὐτῶν ἡ θεωρία, καὶ πῶς τὰ παρ᾽ αὐτῆς ποιούμενα καὶ γεννώμενα ἐπὶ τὴν τῆς θεωρίας ἀνάξομεν ἐνέργειαν, καὶ πῶς ἡ φύσις, ἣν ἀφάνταστόν φασι καὶ ἄλογον εἶναι, θεωρίαν τε ἐν αὐτῇ ἔχει καὶ ἃ ποιεῖ διὰ θεωρίαν ποιεῖ, ἣν οὐκ ἔχει [καὶ πῶς].
 
 2 Ὅτι μὲν οὖν οὔτε χεῖρες ἐνταῦθα οὔτε πόδες οὔτε τι ὄργανον ἐπακτὸν ἢ σύμφυτον, ὕλης δὲ δεῖ, [ἐφ᾽ ἧς ποιήσει,] καθ᾽ ἣν ἐνειδοποιεῖ, παντί που δῆλον. Δεῖ δὲ καὶ τὸ μοχλεύειν ἀφελεῖν ἐκ τῆς φυσικῆς ποιήσεως. Ποῖος γὰρ ὠθισμὸς ἢ τίς μοχλεία χρώματα ποικίλα καὶ παντοδαπὰ καὶ σχήματα ποιεῖ; Ἐπεὶ οὐδὲ οἱ κηροπλάσται [ἢ κοροπλάθαι], εἰς οὓς δὴ καὶ βλέποντες ὠιήθησαν τὴν τῆς φύσεως δημιουργίαν τοιαύτην εἶναι, χρώματα δύνανται ποιεῖν μὴ χρώματα ἀλλαχόθεν ἐπάγοντες οἷς ποιοῦσιν. Ἀλλὰ γὰρ ἐχρῆν συννοοῦντας, ὡς καὶ ἐπὶ τῶν τὰς τέχνας τὰς τοιαύτας μετιόντων [ὅτι] δεῖ τι ἐν αὐτοῖς μένειν, καθ᾽ ὃ μένον διὰ χειρῶν ποιήσουσιν ἃ αὐτῶν ἔργα, ἐπὶ τὸ τοιοῦτον ἀνελθεῖν τῆς φύσεως καὶ αὐτοὺς καὶ συνεῖναι, ὡς μένειν δεῖ καὶ ἐνταῦθα τὴν δύναμιν τὴν οὐ διὰ χειρῶν ποιοῦσαν καὶ πᾶσαν μένειν. Οὐ γὰρ δὴ δεῖται τῶν μὲν ὡς μενόντων, τῶν δὲ ὡς κινουμένων – ἡ γὰρ ὕλη τὸ κινούμενον, αὐτῆς δὲ οὐδὲν κινούμενον – ἢ ἐκεῖνο οὐκ ἔσται τὸ κινοῦν πρώτως, οὐδὲ ἡ φύσις τοῦτο, ἀλλὰ τὸ ἀκίνητον τὸ ἐν τῷ ὅλῳ. Ὁ μὲν δὴ λόγος, φαίη ἄν τις, ἀκίνητος, αὕτη δὲ ἄλλη παρὰ τὸν λόγον καὶ κινουμένη. Ἀλλ᾽ εἰ μὲν πᾶσαν φήσουσι, καὶ ὁ λόγος· εἰ δέ τι αὐτῆς ἀκίνητον, τοῦτο καὶ ὁ λόγος. Καὶ γὰρ εἶδος αὐτὴν δεῖ εἶναι καὶ οὐκ ἐξ ὕλης καὶ εἴδους· τί γὰρ δεῖ αὐτῇ ὕλης θερμῆς ἢ ψυχρᾶς; Ἡ γὰρ ὑποκειμένη καὶ δημιουργουμένη ὕλη ἥκει τοῦτο φέρουσα, ἢ γίνεται τοιαύτη ἡ μὴ ποιότητα ἔχουσα λογωθεῖσα. Οὐ γὰρ πῦρ δεῖ προσελθεῖν, ἵνα πῦρ ἡ ὕλη γένηται, ἀλλὰ λόγον· ὃ καὶ σημεῖον οὐ μικρὸν τοῦ ἐν τοῖς ζώιοις καὶ ἐν τοῖς φυτοῖς τοὺς λόγους εἶναι τοὺς ποιοῦντας καὶ τὴν φύσιν εἶναι λόγον, ὃς ποιεῖ λόγον ἄλλον γέννημα αὐτοῦ δόντα μέν τι τῷ ὑποκειμένῳ, μένοντα δ᾽ αὐτόν. Ὁ μὲν οὖν λόγος ὁ κατὰ τὴν μορφὴν τὴν ὁρωμένην ἔσχατος ἤδη καὶ νεκρὸς καὶ οὐκέτι ποιεῖν δύναται ἄλλον, ὁ δὲ ζωὴν ἔχων ὁ τοῦ ποιήσαντος τὴν μορφὴν ἀδελφὸς ὢν καὶ αὐτὸς τὴν αὐτὴν δύναμιν ἔχων ποιεῖ ἐν τῷ γενομένῳ.
@@ -144,16 +160,16 @@ export let dictionary = {
 }
 
 export let plotinus_e3_c8_commentary_by_para = [
-    'Commentary for paragraph 1',
-    'Commentary for paragraph 2',
-    'Commentary for paragraph 3',
-    'Commentary for paragraph 4',
-    'Commentary for paragraph 5',
-    'Commentary for paragraph 6',
-    'Commentary for paragraph 7',
-    'Commentary for paragraph 8',
-    'Commentary for paragraph 9',
-    'Commentary for paragraph 10',
+    'Commentary for paragraph 1\n' + loremipsum,
+    'Commentary for paragraph 2\n' + loremipsum,
+    'Commentary for paragraph 3\n' + loremipsum,
+    'Commentary for paragraph 4\n' + loremipsum,
+    'Commentary for paragraph 5\n' + loremipsum,
+    'Commentary for paragraph 6\n' + loremipsum,
+    'Commentary for paragraph 7\n' + loremipsum,
+    'Commentary for paragraph 8\n' + loremipsum,
+    'Commentary for paragraph 9\n' + loremipsum,
+    'Commentary for paragraph 10 \n' + loremipsum,
 ]
 
 export function makeHyperlink(text) {
@@ -229,3 +245,4 @@ export const videoLinks = [
     // '0NXs3AXr1bE',
     // 'd6ZLOoZiwFw',
 ]
+

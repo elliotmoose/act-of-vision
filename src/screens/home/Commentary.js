@@ -38,7 +38,7 @@ const Commentary = ({ paragraphIndex }) => {
       >
         <View style={{backgroundColor: Colors.green, flex: 1}}>
             <ScrollView style={{padding: 12}}>
-                <View style={{borderRadius: 20, overflow: 'hidden'}}>
+                <View style={{borderRadius: 20, overflow: 'hidden', marginBottom: 34}}>
                     <Text style={{backgroundColor: 'white', padding: 34}}>
                         {text}
                     </Text>

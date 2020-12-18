@@ -39,15 +39,24 @@ export default function App() {
         <Drawer.Navigator initialRouteName="App"
         drawerContent={(props)=><DrawerMenu {...props}/>}
         >
-          <Drawer.Screen name="App" component={HomeScreen} />
-          <Drawer.Screen name="AboutUs" component={AboutUs} />
-          <Drawer.Screen name="Author" component={Author} />
-          <Drawer.Screen name="Concepts" component={Concepts} />
-          <Drawer.Screen name="Summaries" component={Summaries} />
-          <Drawer.Screen name="Watch" component={Watch} />
+          <Drawer.Screen name="App" component={HomeScreen} options={{headerShown: false}}/>
+          <Drawer.Screen name="AboutUs" component={AboutUs} options={{headerShown: false}}/>
+          <Drawer.Screen name="Author" component={Author} options={{headerShown: false}}/>
+          <Drawer.Screen name="Concepts" component={Concepts} options={{headerShown: false}}/>
+          <Drawer.Screen name="Summaries" component={Summaries} options={{headerShown: false}}/>
+          <Drawer.Screen name="Watch" component={Watch} options={{headerShown: false}}/>
         </Drawer.Navigator>
       </NavigationContainer>
     </BottomSheetModalProvider>
   );
 }
 
+
+
+//App
+//Bottom Sheet Modal
+//Navigation Container
+//Drawer Navigator
+//Drawer Screen
+//Stack Navigator
+//Stack Screen
